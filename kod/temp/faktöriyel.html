@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faktöriyel</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // ! matematikte faktöriyel sembolüdür. 2! = 2*1,   3!= 3*2*1,   5!=5*4*3*2*1=
+    // if(girilenSayi != 5)
+    var i=1;
+    var carpim=1;
+    var girilenSayi=5;
+    for(i;i<= girilenSayi; i++){
+        carpim = carpim* i;
+    }
+    console.log("dongü ile yapılan işlem sonucu",carpim)
+
+    var sonuc=1;
+    function faktoriyelBul(girilenSayi){
+        console.log("fonksiyon başladı",girilenSayi)
+        sonuc = sonuc * girilenSayi
+        if ( girilenSayi==1)
+         {
+            console.log("=",sonuc)
+            return sonuc;
+         }
+        else   
+         return  faktoriyelBul(girilenSayi-1)
+    }
+    var recursiveSonuc= faktoriyelBul(girilenSayi)
+    console.log("recursive fonk. ile yapılan sonuc :",recursiveSonuc)
+
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tekrarEt</title>
+    </head>
+    <script>
+            
+    var age = [12,34,21,82,48,14,91,26,19,42,66]
+    var child = age.filter(age=>age<14)
+    var youth = age.filter(age=>14<age<65)
+    var old = age.filter(age=>age>65)
+    console.log(child)
+    console.log(youth)
+    console.log(old)
+
+    console.log(age.some(age=>age<14))
+    console.log(age.some(age=>age>14))
+    console.log(age.some(num=>num>65))
+    console.log(age.every(num=>num>0))
+    
+    
+
+  </script>
+  <style>
+
+  </style>
+    <body>
+    </body>
+
+</html>

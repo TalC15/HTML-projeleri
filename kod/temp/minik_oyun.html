@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minik Oyun</title>
+  </head>
+  <script>
+    var Ben = 100;
+    var Canavar = 100;
+
+    console.log("KAVGAYA HAZIRLAN!");
+    console.log("Benim Can Puanım:", Ben);
+    console.log("Canavar'ın Can Puanı:", Canavar);
+    console.log("");
+
+    function Vurmak() {
+      document.getElementById("button").disabled = true;
+
+      setTimeout(()=>{
+        document.getElementById("button").disabled=false;
+      },3000)
+
+      console.log("VURDUM VE VURDU");
+
+      var vurmak = Math.floor(Math.random(20) * 20);
+      var vurmak2 = Math.floor(Math.random(20) * 20);
+
+      if (Canavar > 0  & Ben > 0) {
+        document.getElementById("hero-style").className = "hero-animation";
+        setTimeout(() => {
+          document.getElementById("hero-style").className = "";
+          document.getElementById("monster-style").className = "monster-animation";
+        }, 1500);
+
+        setTimeout(() => {
+          Canavar = Canavar - vurmak < 0 ? 0 : Canavar - vurmak;
+          console.log("Canavar'ın kalan can puanı:", Canavar);
+          document.getElementById("canavarın-can-puanı").style.width = `${Canavar}%`;
+          document.getElementById("canavarın-can-puanı").innerHTML = `${Canavar}`;
+        }, 750);
+      }
+
+      if (Ben > 0 & Canavar >0 ) {
+        setTimeout(() => {
+          document.getElementById("monster-style").className = "";
+        }, 3000);
+        setTimeout(() => {
+          Ben = Ben - vurmak2 < 0 ? 0 : Ben - vurmak2;
+          console.log("Benim kalan can puanım:", Ben);
+          document.getElementById("benim-can-puanım").style.width = `${Ben}%`;
+          document.getElementById("benim-can-puanım").innerHTML = `${Ben}`;
+        }, 2250);
+      }
+
+      console.log("");
+
+      if ((Canavar > 0) & (Ben == 0)) {
+        console.log("Öldüm ve Yenildim");
+        console.log("Canavar Kazandı");
+        console.log("Oyun Bitti");
+        document.getElementById("button").disabled = true;
+        document.getElementById("button").style.cursor = "not-allowed";
+        document.getElementById("screen").style.backgroundColor = "gray";
+        document.getElementById("button").innerHTML="You Died";
+        document.getElementById("hero-style").className="died-hero";
+        document.getElementById("monster-style").className="win-monster";
+      }
+
+      if ((Ben > 0) & (Canavar == 0)) {
+        console.log("Canavar Öldü ve Yenildi");
+        console.log("Tebrikler Kazandınız");
+        console.log("Oyun Bitti");
+        document.getElementById("button").disabled = true;
+        document.getElementById("button").style.cursor = "not-allowed";
+        document.getElementById("screen").style.backgroundColor = "rgb(234, 255, 200)";
+        document.getElementById("button").innerHTML = "You Win";
+        document.getElementById("monster-style").className="died-monster";
+        document.getElementById("hero-style").className="win-hero";
+      }
+
+      if ((Canavar == 0) & (Ben == 0)) {
+        console.log("BERABERE");
+        console.log("Oyun Bitti");
+        document.getElementById("button").disabled = true;
+        document.getElementById("button").style.cursor = "not-allowed";
+        document.getElementById("button").innerHTML="Draw";
+        document.getElementById("screen").style.backgroundColor="rgb(236, 236, 236)";
+        document.getElementById("hero-style").className="died-hero";
+        document.getElementById("monster-style").className="died-monster";
+      }
+    }
+  </script>
+  <style>
+    #button {
+      width: 200px;
+      height: 50px;
+      margin-left: -935px;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: cursive;
+      background-color: wheat;
+      border-radius: 2cqb;
+      margin-bottom: 5px;
+    }
+
+    #benim-can-puanım {
+      height: 20px;
+      width: 100%;
+      background-color: green;
+      border:2px solid black;
+      border-radius:2cqb;
+      font-family:cursive;
+      padding-bottom:2px;
+    }
+
+    #canavarın-can-puanı {
+      height: 20px;
+      width: 100%;
+      background-color: pink;
+      margin-top: 10px;
+      border:2px solid black;
+      border-radius:2cqb;
+      font-family:cursive;
+      padding-bottom:2px;
+    }
+
+    #big-title {
+      margin-left: 640px;
+      display: inline-block;
+      font-family: cursive;
+      font-size: 75px;
+      font-weight: 500;
+      color: rebeccapurple;
+      height: 33px;
+      margin-top: -15px;
+    }
+
+    .div-style {
+      display: inline-block;
+    }
+
+    @keyframes hero {
+      0% {
+        left: 0;
+      }
+      50% {
+        left: 470px;
+      }
+      100% {
+        left: 0;
+      }
+    }
+
+    @keyframes monster {
+      0% {
+        right: 0;
+      }
+      50% {
+        right: 470px;
+      }
+      100% {
+        right: 0px;
+      }
+    }
+
+  
+
+    #hero-style {
+      height: 250px;
+      margin-top: 60px;
+      margin-left: 300px;
+    }
+
+    #monster-style {
+      height: 250px;
+      margin-top: 60px;
+      margin-left: 300px;
+      
+    }
+
+    .hero-animation {
+      position: relative;
+      animation-name: hero;
+      animation-duration: 1.5s;
+      animation-timing-function: ease;
+      animation-direction: alternate-reverse;
+      animation-iteration-count: 1;
+    }
+
+    .monster-animation {
+      position: relative;
+      animation-name: monster;
+      animation-duration: 1.5s;
+      animation-timing-function: ease;
+      animation-direction: alternate-reverse;
+      animation-iteration-count: 1;
+    }
+
+    @keyframes diedHero{
+      to{
+        transform: rotate(-90deg);
+      }
+      20%{top:10px}
+      40%{top:20px}
+      60%{top:30px}
+      80%{top:40px}
+      100%{top:50px}
+    }
+
+    .died-hero{
+      position:relative;
+      animation-name:diedHero;
+      animation-duration:4s;
+      animation-timing-function:linear;
+      animation-fill-mode:forwards;
+    }
+
+    #hero-style{
+      border-radius:10cqb;
+    }
+
+   
+
+    @keyframes winMonster{
+      0%{bottom:0px}
+      100%{bottom:150px}
+    }
+
+    @keyframes winHero{
+      0%{bottom:0px}
+      100%{bottom:150px}
+      to{
+        transform: rotate(360deg);
+      }
+    }
+
+
+    .win-monster{
+      position:relative;
+      animation-name:winMonster;
+      animation-duration:1s;
+      animation-timing-function:ease;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode:backwards;
+    }
+
+    .win-hero{
+      position:relative;
+      animation-name:winHero;
+      animation-duration:1s;
+      animation-timing-function:ease;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode:backwards;
+    }
+
+    @keyframes diedMonster{
+      to{
+        transform: rotate(90deg);
+      }
+      20%{top:10px}
+      40%{top:20px}
+      60%{top:30px}
+      80%{top:40px}
+      100%{top:50px}
+    }
+
+    .died-monster{
+      position:relative;
+      animation-name:diedMonster;
+      animation-duration:4s;
+      animation-timing-function:linear;
+      animation-fill-mode:forwards;
+    }
+
+  </style>
+  <body id="screen">
+  <div>
+    <h1 id="big-title">MiniKoyun</h1>
+    <div class="div-style">
+      <button id="button" onclick="Vurmak()">
+        VUR
+      </button>
+    </div>
+
+    <div id="benim-can-puanım"></div>
+    <div id="canavarın-can-puanı"></div>
+
+    <img id="hero-style" src="../../resimler/hero.svg" />
+    <img id="monster-style" src="../../resimler/monster3.svg" />
+  </div>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+
+    /* var sinavPuani= 5
+  
+     if(sinavPuani==5){
+      console.log("Çok İyi")
+     }
+     else if(sinavPuani==4){
+      console.log("İyi")
+     }
+     else if(sinavPuani==3){
+      console.log("Orta")
+     }
+     else if(sinavPuani==2){
+      console.log("Geçer")
+     }
+     else if(sinavPuani==1 || sinavPuani==0) {
+      console.log("Kaldi")
+     }
+     else{
+      console.log("Not en az '0' en fazla '5' olabilir ")
+     }*/
+
+    /*1=Başla
+    2=Rasgele bir sayı belirle
+    3=Sayıyı tahmin etmeye çalış
+    4=Eğer tahmin edilen sayı, gerçekten rasgele seçilen sayıya eşitse, "tebrik ederim bildin" mesajını ver ve bitir
+    5=Eğer tahmin edilen sayı, rasgele seçilen sayıya eşit değilse, "Bilemedin, tekrar dene" mesajı ver
+    6= İki defa daha bulamazsa, "Kaybettin" mesajı ver */
+
+    var tutulanSayi;
+    tutulanSayi = Math.floor(Math.random(100)*100)
+
+
+    function tıkla() {
+         
+         setTimeout(() => {
+            console.log("calısti")
+        var tahmin = document.getElementById("sayi")?.value
+        if(tahmin==tutulanSayi){
+            if(document.getElementById("gecici"))
+        document.getElementById("gecici").innerHTML = "Tebrikler Bildiniz :)"
+        }
+        else if(tahmin>100 || tahmin<0){
+            if(document.getElementById("gecici"))
+        document.getElementById("gecici").innerHTML = "Sayınız 0-100 Arası Olmalı =|"
+        }
+        else{
+            if(document.getElementById("gecici"))
+        document.getElementById("gecici").innerHTML ="Üzgünüm Bilemediniz :_("
+        
+            
+        }
+         }, 0);
+        
+       
+        
+    }
+      
+    function hileGoster(){
+
+        console.log(fonksiyon(15,17))
+        if(document.getElementById("gizli"))
+        document.getElementById("gizli").innerHTML=  tutulanSayi
+
+        
+    }
+    function hileGizle(){
+        console.log(fonksiyon(100,12))
+        if(document.getElementById("gizli"))
+        document.getElementById("gizli").innerHTML= ""
+
+        
+    }
+
+    function fonksiyon(sayi1, sayi2){
+       var toplam = sayi1 + sayi2
+        return toplam
+        
+    }
+
+    console.log(fonksiyon(12,78))
+
+
+
+
+
+
+
+
+
+</script>
+<style>
+    body{
+        background-image: url("../../resimler/falling-numbers-digits-beautiful-background-design-wallpaper-P2JE1G.jpg");
+    }
+    .input-1{
+    width: 217px;
+    height: 35px;
+    font-size: 22px;
+    border-radius: 1cqb;
+    border-width: 0.5px;
+    font-style: italic;
+    font-family: unset;
+    }
+
+
+    #button-1{
+    width: 80px;
+    height: 35px;
+    background-color: cyan;
+    color: black;
+    font-size: 25px;
+    margin-left: 67px;
+    border-radius: 5cqb;
+    margin-top:40px;
+    display:block;
+    }
+
+    #button-2{
+        width: 200px;
+        height: 200px;
+        color:rgb(11, 16, 12);
+        position:absolute;
+        top:500px;
+        left:500px;
+        opacity: 0;
+    }
+
+    .cevap{
+    font-size: 17px;
+    color: red;
+    font-family: cursive;
+    font-weight: 600;
+    }
+
+    #cerceve{
+     border:2px solid black;
+     width: 262px;
+     height: 200px;
+     padding-top: 110px;
+    padding-left: 35px;
+    margin-left:600px;
+    background-color:darkgray;
+    border-radius:1cqb;
+    border-style:double;
+    }
+
+    #gizli{
+        color:darkblue;
+        font-size:13px;
+    }
+
+    
+</style>
+
+<body>
+    <div id="cerceve">
+     <input class="input-1" id="sayi" type="number" placeholder="Lütfen bir sayı giriniz" />
+    <div class="cevap" id="gecici" >
+
+    </div>
+     
+    <button id="button-1" onclick="tıkla()">Bas</button>
+    <button  id="button-2" onmouseover="hileGoster()" onmouseleave="hileGizle()">bas2</button>
+    </div>
+
+    <div id="gizli">
+
+
+    </div>
+
+</body>
+
+</html>

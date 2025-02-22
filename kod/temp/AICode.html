@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taş Kağıt Makas</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .choices {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .choices button {
+      background: #fff;
+      color: #4e54c8;
+      border: none;
+      border-radius: 8px;
+      padding: 15px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .choices button:hover {
+      background: #4e54c8;
+      color: #fff;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    .result {
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .result p {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Taş-Kağıt-Makas</h1>
+    <p>Bir seçim yap:</p>
+    <div class="choices">
+      <button @click="playGame('Taş')">Taş</button>
+      <button @click="playGame('Kağıt')">Kağıt</button>
+      <button @click="playGame('Makas')">Makas</button>
+    </div>
+
+    <div class="result" v-if="result">
+      <p>Senin seçimin: {{ userChoice }}</p>
+      <p>Bilgisayarın seçimi: {{ computerChoice }}</p>
+      <p>{{ result }}</p>
+    </div>
+  </div>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          userChoice: null,
+          computerChoice: null,
+          result: null,
+        };
+      },
+      methods: {
+        playGame(userChoice) {
+          this.userChoice = userChoice;
+
+          const choices = ['Taş', 'Kağıt', 'Makas'];
+          this.computerChoice = choices[Math.floor(Math.random() * 3)];
+
+          this.result = this.determineWinner(this.userChoice, this.computerChoice);
+        },
+        determineWinner(user, computer) {
+          if (user === computer) {
+            return "Berabere!";
+          }
+          if (
+            (user === 'Taş' && computer === 'Makas') ||
+            (user === 'Kağıt' && computer === 'Taş') ||
+            (user === 'Makas' && computer === 'Kağıt')
+          ) {
+            return "Tebrikler, kazandınız!";
+          }
+          return "Bilgisayar kazandı!";
+        },
+      },
+    });
+
+    app.mount('#app');
+  </script>
+</body>
+</html>

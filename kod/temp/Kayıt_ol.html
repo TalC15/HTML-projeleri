@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>Üye Kayıt/Düzenleme</title>
+    </head>
+    <style>
+        *{
+            font-family: 'EB Garamond', serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+    #üst-kısım{
+    width: 1200px;
+    height:57px;
+    background-color:rgba(236,236,236,255);
+    margin-left:160px;
+    padding-left:10px;
+    padding-top:5px;
+    }
+
+    .üstadam{
+        height:50px;
+        
+    }
+
+    #büyükbaşlık{
+        margin-left:63px;
+        margin-top:-38px;
+        font-size:20px;
+        color:rgba(129,131,129,255);
+    }
+
+    .küçükbaşlık{
+        
+        margin-top: 30px;
+        
+        
+    }
+
+    #ikiden-birinci{
+        display:inline-block;
+        width:570px;
+        height:370px;
+        margin-left:160px;
+         padding-left: 24px;;
+        
+        
+    }
+   
+    #ikiden-ikinci{
+        width:585px;
+        height:370px;
+        margin-left:777px;
+        margin-top:-370px;
+    }
+
+    .input-ayarları{
+        display:inline-block;
+        margin-left:50px;
+        width:504px;
+        height:40px;
+        border-width: 1px;
+        border-top-right-radius:1cqb;
+        border-bottom-right-radius:1cqb;
+        border-color:rgba(182,182,182,1);
+        border-style:solid;
+        padding-left: 12px;
+        
+        
+    }
+
+    .input-foto{
+        
+        height:45px;
+        width:57px;
+        margin-top:-44px;
+        margin-left:-2px;
+        border-radius:1cqb;
+    }
+
+    #input-boşluk{
+        margin-top:20px;
+    }
+
+    #input-boşluk2{
+        margin-top:20px;
+    }
+
+    #input-boşluk3{
+        margin-top:20px;
+    }
+
+    .input-foto2{
+        height:45px;
+        width:57px;
+        position: fixed;
+        margin-left: -572px;
+        margin-top: 20px;
+        border-radius:1cqb;
+    }
+
+    .input-foto3{
+        height:45px;
+        width:57px;
+        position: fixed;
+        margin-left: -572px;
+        border-radius:1cqb;
+    }
+
+    .input-foto4{
+        height:45px;
+        width:57px;
+        position:fixed;
+        margin-left: -572px;
+        margin-top:20px;
+        border-radius:1cqb;
+    }
+
+    .tikat{
+        height:40px;
+        width:568px;
+        background-color:rgba(236,236,236,255);
+        margin-top:20px;
+    }
+
+    .checkbox{
+        width:16px;
+        height:20px;
+        margin-top:6px;
+        margin-left:10px;
+    }
+
+    .onay-yazisi{
+        font-size:13px;
+        font-family:unset;
+        margin-left: 36px;
+        margin-top: -20px;
+    }
+
+    #Üyelik-sözlesmesi{
+        color:rgba(236,167,69,255);
+        text-decoration:none;
+        margin-left: 8px;
+        font-size: 13px;
+        position: fixed;
+        margin-top: 10px;
+    }
+
+    .onay-yazisi-2{
+        font-size: 13px;
+        font-family:unset;
+        margin-left: 158px;
+        margin-top:-19px;
+    }
+
+    #buton{ 
+        width:568px;
+        height:40px;
+        margin-top:9px;
+        background-color:rgba(68,68,68,255);
+        color:#ffffff;
+ 
+    }
+
+    #alt-bölüm{
+        width:1167px;
+        height:40px;
+        margin-left:178px;
+        margin-top:10px;
+    }
+
+    #alt-yazi{
+        font-size: 13px;
+        font-family: unset;
+        margin-top:3px;
+    }
+
+    #alt-cerceve{
+        height:27px;
+        border: 1px solid #e4e4e4;
+    }
+
+    #en-alt-cerceve{
+    margin-top: 50px;
+    height: 85px;
+    border: 1px solid #e4e4e4;
+    }
+
+    .en-alt-foto{
+        margin-left: 140px;
+        margin-top: 27px;
+        width: 40px;
+    }
+
+    .turuncular{
+        margin-top: -40px;
+        margin-left: 188px;
+        color: rgba(255,118,23,255);
+        font-size:15px;
+        font-weight:bold;
+    }
+
+    .en-alt-yazi{
+        margin-left: 188px;
+        font-size: 13px;
+        margin-top: -15px;
+        font-weight: bold;
+        color: #b2acac;
+    }
+
+    .en-alt-foto-2{
+        margin-top: -48px;
+        margin-left: 385px;
+        position: fixed;
+        height: 40px;
+     }
+
+     .turuncular-2{
+        margin-left: 441px;
+        margin-top: -44px;
+        color: rgba(255,118,23,255);
+        font-size:15px;
+        font-weight:bold;
+     }
+
+     #en-alt-yazi-konum{
+        margin-left:442px;
+     }
+
+     #en-alt-foto-2-konum{
+        margin-left: 676px;
+     }
+
+     #turuncular-2-konum{
+        margin-left:720px;
+     }
+
+     #en-alt-yazi-konum-2{
+        margin-left:720px;
+     }
+
+     #en-alt-foto-2-konum-2{
+        margin-left:920px;
+     }
+
+     #turuncular-2-konum-2{
+        margin-left:966px;
+     }
+
+     #en-alt-yazi-konum-3{
+        margin-left: 966px;
+     }
+
+    #turuncular-2-konum-3{
+        margin-left:1170px;
+    }
+
+    #en-alt-yazi-konum-4{
+        margin-left:1170px;
+    }
+
+    .input-wrapper{
+        display:flex;
+        flex-direction: row;
+    }
+
+    </style>
+    <body>
+             <div>
+        <div id="üst-kısım">
+            <img class="üstadam" src="../../resimler/Ekran görüntüsü 2023-10-19 204642.png">
+            <p id="büyükbaşlık">ÜYE KAYIT/DÜZENLEME</p>
+        </div>
+         
+        <div id="ikiden-birinci">
+            <p class="küçükbaşlık">ÜYELİK BİLGİLERİ</p>
+
+            <div class="input-wrapper"> 
+                <img class="input-foto" src="../../resimler/Ekran görüntüsü 2023-10-20 180234.png">
+                <input class="input-ayarları" type="text" placeholder = "Ad" required>
+            </div>
+
+            <input class="input-ayarları" id="input-boşluk" type="text" placeholder="Soyad">
+            <img class="input-foto"  src="../../resimler/Ekran görüntüsü 2023-10-21 145706.png">
+
+            <input class="input-ayarları" id="input-boşluk2" type="email" placeholder="E-Mail" required>
+            <img class="input-foto2" src="../../resimler/Ekran görüntüsü 2023-10-24 173459.png">
+        </div>
+
+        <div id="ikiden-ikinci">
+             <p class="küçükbaşlık">ŞİFRE BİLGİLERİ</p>
+             <input class="input-ayarları" type="password" placeholder="Şifre" required>
+             <img class="input-foto3" src="../../resimler/Şifere.png">
+
+             <input class="input-ayarları" id="input-boşluk3" type="password" placeholder="Şifre Tekrar" required>
+             <img class="input-foto4" src="../../resimler/şifreeki.png">
+
+             <div class="tikat"> 
+                <input class="checkbox" type="checkbox" >
+                <p class="onay-yazisi">Tarafınızdan gönderilecek bilgilendirme e-postalarını almak istiyorum.</p>
+              </div>
+
+              <div class="tikat"> 
+                <input class="checkbox" type="checkbox" >
+                <p class="onay-yazisi">Tarafınızdan gönderilecek bilgilendirme sms'lerini almak istiyorum.</p>
+              </div>
+
+              <div class="tikat">
+                <input class="checkbox" type="checkbox" required>
+                <a id="Üyelik-sözlesmesi"  href="../../kod/temp/Üyelik_sözleşmesi.html">Üyelik Sözleşmesini</a>
+                <p class="onay-yazisi-2">Okudum, Kabul Ediyorum.</p>
+              </div>
+
+              <input id="buton" type="submit" value="KAYDET" >
+              
+        </div>
+
+        <div id="alt-bölüm">
+            <fieldset id="alt-cerceve">
+            <p id="alt-yazi">Firmamız hiçbir şekilde e-mailinizi ve kişisel bilgilerinizi ticari amaç uğruna kullanmaz.</p>
+        </fieldset>
+        </div>
+
+        <div id="en-alt-bölüm">
+            <fieldset id="en-alt-cerceve"> 
+
+                <img class="en-alt-foto" src="../../resimler/kitap.png">
+                <p class="turuncular">Blog</p>
+                <p class="en-alt-yazi">Kitapları takip et.</p>
+
+                <img class="en-alt-foto-2" src="../../resimler/Ekran görüntüsü 2023-10-26 172603.png">
+                <p class="turuncular-2">Okuma Listeleri</p>
+                <p class="en-alt-yazi" id="en-alt-yazi-konum">Her yaşa, her tarza özel.</p>
+
+                <img class="en-alt-foto-2" id="en-alt-foto-2-konum" src="../../resimler/Ekran görüntüsü 2023-10-26 172628.png">
+                <p class="turuncular-2" id="turuncular-2-konum">Bize Yaz</p>
+                <p class="en-alt-yazi" id="en-alt-yazi-konum-2">Ne zaman istersen!</p>
+
+                <img class="en-alt-foto-2" id="en-alt-foto-2-konum-2" src="../../resimler/kalp.png">
+                <p class="turuncular-2" id="turuncular-2-konum-2">Bizi Ara!</p>
+                <p class="en-alt-yazi" id="en-alt-yazi-konum-3">0850 304 36 49</p>
+
+                <p class="turuncular-2" id="turuncular-2-konum-3">Bizi takip et</p>
+                <p class="en-alt-yazi" id="en-alt-yazi-konum-4">Sosyal Medya Hesaplarımızdan</p>
+
+            
+            </fieldset>
+      
+        </div>
+
+            </div>
+    </body>
+</html>
+    

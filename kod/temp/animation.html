@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animasyon Çalışmaları</title>
+    </head>
+    <style>
+
+    @keyframes example {
+            from {background-color: brown;}
+            to {background-color: cyan;}
+    }
+
+    @keyframes example-2{
+       0%{background-color:black; left:0px; top:0px;}
+       20%{background-color:antiquewhite; left:200px; top:0px;}
+       50%{background-color:bisque; left:200px; top:200px;}
+       75%{background-color:beige; left:0px; top:200px;}
+       100%{background-color:white; left:0px; top:0px;}
+    }
+      
+    #div-animation{
+      width: 100px;
+      height:100px;
+      background-color: brown;
+      animation-name: example;
+      animation-duration: 5s;
+      animation-delay:2s;
+      animation-iteration-count:infinite;
+      animation-direction:alternate-reverse;
+    }
+
+    #div-animation-2{
+        width:100px;
+        height:100px;
+        position:relative;
+        background-color:black;
+        animation-name:example-2;
+        animation-duration:5s;
+        animation-timing-function:ease;
+        animation-delay:2s;
+        animation-iteration-count:2;
+        animation-direction:alternate;
+        animation-fill-mode:forwards;
+        animation: example-2 5s linear 2s 2 alternate;
+        
+    }
+  
+    
+    </style>
+    <body>
+        <div id="div-animation">
+
+        </div>
+        <div id="div-animation-2">
+            
+        </div>
+    </body>
+</html>

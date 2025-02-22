@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolay Renkli Liste</title>
+</head>
+<body>
+
+<ul id="liste">
+    <!-- JavaScript buraya öğeleri otomatik olarak ekleyecek -->
+</ul>
+
+<script>
+    // 100 adet örnek öğe için bir döngü
+    const liste = document.getElementById('liste');
+    
+    for (let i = 1; i <= 100; i++) {
+        const li = document.createElement('li');  // Liste elemanı oluştur
+        li.textContent = `Öğe ${i}`;             // İçeriğini ayarla
+        
+        // Çift sayı ise mavi, tek sayı ise sarı arka plan ver
+        li.style.backgroundColor = i % 2 === 0 ? 'blue' : 'yellow';
+        li.style.color = i % 2 === 0 ? 'white' : 'black'; // Yazı rengini de ayarla
+        
+        liste.appendChild(li);  // Listeye ekle
+    }
+</script>
+
+</body>
+</html>

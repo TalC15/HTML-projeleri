@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <title>Ödev 2</title>
+</html>
+<script>
+
+    function YemekFabrikasiEkrani(isim,yas){
+        var mesaj = yas<0 ? "Böyle bir yaş olamaz": yas<=2 ? "Merhaba!"+isim+"'in maması hazırdır alabilirsiniz" : yas<=7 ? 
+         "Merhaba!"+isim+"'in çorbası hazırdır alabilirsiniz" : yas<=14 ?
+         "Merhaba!"+isim+"'in yemeği hazırdır alabilirsiniz" :
+         "Merhaba!"+isim+"in yemeği,tatlısı,çayı hazırdır alabilirsiniz iyi günler"
+
+         console.log(mesaj)
+         
+
+         var not = yas<0 ? isim+ " Dostum! Böyle bir yaş yok" : yas<=5 ? isim+ " Dostum! Sen daha çok küçüksün!" : 
+         yas<=14 ? isim+ " Dostum! Sen sanki büyümeye başladın?" : yas<=30 ? isim+ " Dostum! Sen koca delikanlı olmuşsun!" : 
+         yas<65 ? isim+ " Dostum! Sen sanki yaşlanmaya başladın?" : yas<=100 ? isim+ " D-dostum! Sen gerçekten yaşlandın!" : 
+         "Yok artık :O"
+
+         console.log(not)
+    
+     /*switch(yas){
+
+        case 0: 
+        case 1:
+        case 2: 
+            console.log("Merhaba!",isim,"'in maması hazırdır alabilirsiniz");
+        break;
+
+        case 3:
+        case 4: 
+        case 5: 
+        case 6: 
+        case 7: 
+        console.log("Merhaba!",isim,"'in çorbası hazırdır alabilirsiniz");
+        break;
+
+        case 8: 
+        case 9: 
+        case 10: 
+        case 11: 
+        case 12: 
+        case 13:
+        case 14: 
+        console.log("Merhaba!",isim,"'in yemeği hazırdır alabilirsiniz");
+        break;
+        
+        default: 
+            console.log("Merhaba!",isim,"in yemeği,tatlısı,çayı hazırdır alabilirsiniz iyi günler")
+        break;
+
+     }*/
+     
+    }
+    console.log(YemekFabrikasiEkrani("Mehmet",20))
+    
+</script>
+<style>
+
+</style>
+<body>
+
+</body>

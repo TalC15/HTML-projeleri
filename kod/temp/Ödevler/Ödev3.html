@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ödev3</title>
+    </head>
+    <script>
+
+        var dizi = ['ali','mehmet','cafer']
+        console.log(dizi)
+        
+        console.log("")
+        //forEach(her biri için) Örneği:
+
+        var array = ['a','b','c'];
+       array.forEach(yazdır => console.log(yazdır))
+
+
+        console.log("")
+        //includes(içerir) Örneği:
+
+        var pets = ['cat','dog','rabbit','horse']
+
+        console.log(pets.includes('cat'))
+        console.log(pets.includes('bat'))
+
+        console.log("")
+        //filter(filtre) Örneği:
+        
+        const sayilar = [1,2,3,4,5,6,7,8,9]
+        const filtered = sayilar.filter(num => num > 4)
+        console.log(filtered)
+
+        console.log("")
+        //map(plan) Örneği:
+
+        const isim = ["Ali","Mehmet","Cafer","Muzaffer"]
+        const isimSoyad = isim.map(num=> num+" Yıldırım")
+        console.log(isim)
+        console.log(isimSoyad)
+
+        console.log("")
+        //reduce(azaltmak) Örneği:
+
+        const array2 = [1,2,3,4,5]
+
+        const islemYapanMetod = (toplam, simdikiDeger) => toplam+simdikiDeger
+        console.log(array2.reduce(islemYapanMetod))
+
+        const baskets = [
+            {
+                name:"İphone 8",
+                price: 9000,
+            },
+            {
+                name:"Asus Leptop",
+                price: 18000,  
+            },
+            {
+                name:"Nootbook",
+                price: 22535,
+            },
+            {
+                name:"Samsun Galaxy 20",
+                price:7645,
+            },
+            {
+                name:"İphone 8",
+                price: 9000,
+            },
+        ]
+
+        const totalPrice = baskets.reduce((acc,product)=>acc+product.price,0)
+        console.log({totalPrice});
+        
+        console.log("")
+        //some(bazı) Örneği:
+
+       function kucukMu20(element,index,array){
+        return element<20
+       }
+       console.log([12,23,42].some(kucukMu20))
+       console.log([21,42,73].some(kucukMu20))
+
+       console.log("")
+       //every(her) Örneği:
+
+       const Array = [-1,0,1,2]
+       const şart = Array.every(num=> num>=0)
+       console.log(şart)
+       const şart2 = Array.every(num=> num<=2)
+       console.log(şart2)
+        
+       console.log("")
+       //sort(düzenlemek) Örneği:
+       
+       const numbers = [1,4,3,2,0]
+       numbers.sort(function(a,b){
+        return a-b 
+       })
+       console.log(numbers)
+       
+       const numbers2 = [0,2,21,4,3]
+       numbers2.sort(function(a,b){
+        return b-a 
+       })
+       console.log(numbers2)
+
+
+
+       var arraY = [5,7,2,29,11,13,19,1]
+       var asalMi = arraY.some(element => {
+        if(element==1){
+            return true
+        }
+        for(let i = element-1;i>1;i--){
+        
+            if(element%i== 0 ){
+                return true
+            }      
+
+        }
+       })
+       console.log(asalMi)
+
+
+       
+
+    </script>
+    <body>
+
+    </body>
+</html>

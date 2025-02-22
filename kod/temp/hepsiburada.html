@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hepsiburada</title>
+    </head>
+
+    <script>
+
+        function linkGoster(){
+            var input=document.getElementById("input").value
+
+            if (input==""){
+                document.getElementById("big-button").disabled=true
+                document.getElementById("big-button").style.cursor="not-allowed"
+                document.getElementById("big-button").innerHTML="Lütfen yukarıdaki yeri doldurunuz"
+            }
+
+            else {
+                document.getElementById("big-button").style.cursor="pointer"
+                document.getElementById("big-button").disabled=false
+                document.getElementById("big-button").innerHTML="Devam et"
+                document.getElementById("link").innerHTML = "Buraya tıklayınca şu adrese gideceksiniz:  'https://www.hepsiburada.com/'"
+            }
+        }
+
+         function linkGizle(){
+            document.getElementById("big-button").innerHTML="Devam et"
+            document.getElementById("link").innerHTML = ""
+         }
+
+
+         
+
+    </script>
+    
+    <style>
+        body{
+            font-family: Inter,-apple-system,Helvetica Neue,sans-serif;
+        }
+
+        #ust-baslik{
+            margin-left: 670px;
+            margin-top:40px;
+            font-weight:bolder;
+        }
+
+        .yazi-rengi{
+            color:rgba(255,96,0,255);
+        }
+
+        #orta-bolum{
+            width:410px;
+            height:410px;
+            border:2px solid  ;
+            margin-left:540px;
+            margin-top:45px;
+            border-color:rgba(236,236,236,255);
+            border-radius: 1cqb;
+        }
+
+        .buton{
+            font-weight:700;
+             width:155px;
+            height: 42px;
+            border-radius: 1cqb;
+            border-width:1px;
+            background-color:rgba(238,238,238,255);
+            border-color:rgb(169 169 169);
+            font-size:15px;
+            color:#58514e;
+            border:inherit;
+            
+        }
+
+        #buton-konum{
+            margin-left:55px;
+            margin-top:55px;
+            margin-right:-16px;
+        }
+
+        #buton-konum-2{
+            background-color: #ffffff;
+        }
+
+        #input{
+        width: 288px;
+        height: 50px;
+        margin-left: 53px;
+        margin-top: 27px;
+        border-radius: 1cqb;
+        font-size: 15px;
+        background-color:rgba(238,238,238,255);
+        border:none;
+        padding:0 0 0 14px;
+        }
+
+        #big-button{
+        width: 302px;
+        height: 50px;
+        margin-left: 52px;
+        margin-top: 32px;
+        background-color:rgba(255,96,0,255);
+        color:white;
+        font-weight: bolder;
+        font-size:14px;
+        font-family: sans-serif;
+        border:none;
+        border-radius:1cqb;
+        }
+
+        #link {
+            font-size:13px;
+            margin-left:53px;
+            color:rgba(255,96,0,255);
+        }
+
+        .paragraf{
+            font-size:12px;
+            margin-top:18px;
+        }
+
+        #paragraf-kutusu{
+            width: 302px;
+            margin-left:53px;
+        }
+
+        .linkler{
+            text-decoration: none;
+            color:rgba(112,106,106,255);
+        }
+
+        #alt-bolum{
+            width:410px;
+            height:205px;
+            border:2px solid rgba(236,236,236,255);
+            margin-left:540px;
+            margin-top:25px;
+            border-radius:1cqb;
+        }
+
+        .sosyal-baslik{
+            font-size: 21px;
+            margin-left: 85px;
+            margin-top: 35px;
+            font-weight: bolder;
+        }
+        
+    </style>
+    
+    <body>
+        <div id="ust-bolum">
+            <h2 id="ust-baslik" class="yazi-rengi">hepsiburada</h2>
+        </div>
+
+        <div id="orta-bolum">
+            <input class="buton" id="buton-konum" type="submit" value="Giriş yap">
+            <input class="buton" id="buton-konum-2" type="submit" value="Üye ol">
+
+            <input id="input" type="email or number" placeholder="E-posta adresi veya telefon numarası" required>
+            <div id="uyari">
+
+            </div>
+
+            <a href="#"><button  id="big-button" onmouseover="linkGoster()" onmouseleave="linkGizle()">Devam et</button></a>
+        
+            <div id="link">
+
+            </div>
+            <div id="paragraf-kutusu">
+                <p class="paragraf">Kişisel verileriniz, <a class="linkler" href="#"><strong>Aydınlatma Metni</strong></a> kapsamında işlenmektedir.
+                    "Devam et"  veya "Sosyal hesap" butonlarından birine basarak <a class="linkler" href="#"><strong>Üyelik 
+                    Sözleşmesi</strong></a> 'ni ve <a class="linkler" href="#"><strong>Gizlilik Politikası</strong></a> 'nı okudunuğunuzu ve kabul ettiğinizi 
+                    onaylıyorsunuz.</p>
+            </div>
+        </div>
+
+        <div id="alt-bolum">
+
+            <p class="sosyal-baslik">Sosyal hesap ile giriş yap</p>
+
+        </div>
+
+
+        
+    </body>
+</html>

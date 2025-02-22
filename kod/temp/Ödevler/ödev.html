@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <script>
+
+        function bas(){
+            var sayi = document.getElementById("input").value 
+            var i = 1
+            var toplam = 0
+         
+
+            
+            for(i;i<=sayi;i++){
+                toplam = toplam +i
+                console.log(i)
+                console.log(toplam)  
+            }
+
+            if(sayi<0){
+                document.getElementById("sonuc").innerHTML = "Lütfen geçerli bir sayı giriniz"
+            }
+
+            else if(sayi==0){
+                document.getElementById("sonuc").innerHTML = ""
+            }
+
+            else{
+                document.getElementById("sonuc").innerHTML = toplam 
+            }
+
+         }
+
+         function tıkla(){
+            var sayi = document.getElementById("input-2").value
+
+            if(sayi<0){
+                document.getElementById("sonuc-2").innerHTML="Lütfen geçerli bir sayı giriniz"
+
+            }
+            else if(sayi==0){
+                document.getElementById("sonuc-2").innerHTML = ""
+                
+            }
+
+            else{
+                document.getElementById("sonuc-2").innerHTML= (sayi*(sayi+++1))/2
+            }
+
+            }
+         
+
+        
+
+    </script>
+    <head>
+        <title>Ödev</title>
+    </head>
+    <style>
+        #input{
+            margin-left:12px;
+            height:20px;
+        }
+
+        #button-1{
+            display:block;
+            margin-top:20px;
+            margin-left:12px;
+            width:169px;
+            height:25px;
+            font-size:17px;
+            font-family:monospace;
+            font-weight:700px;
+        }
+
+        #sonuc{
+            margin-left:12px;
+            margin-bottom:-20px;
+            font-size:larger;
+        }
+
+        .kutucuk-1{
+            display:inline-block;
+        }
+
+        #input-2{
+            height:20px;
+        }
+
+        #sonuc-2{
+            
+            font-size:larger;
+        }
+
+        #button-2{
+            display:inline-block;
+            width:169px;
+            height:25px;
+            font-size:17px;
+            font-family:monospace;
+            font-weight:700;
+            margin-top:20px;
+        }
+    </style>
+    <body>
+    <div class="kutucuk-1">
+        <h3>Bir Sayı Yaz, Yazdığın Sayıya Kadar Ki Tüm Sayıları Toplasın!</h3>
+        <input id="input" type="number"/>
+        <div id="sonuc">
+
+        </div>
+        <button id="button-1" onclick="bas()">İşlemi Yap</button>
+    </div>
+
+    <div class="kutucuk-1">
+        <input id="input-2" type="number"/>
+        <div id="sonuc-2">
+
+        </div>
+        <button id="button-2" onclick="tıkla()">Hızlı İşlem</button>
+
+    </div>
+
+
+    </body>
+</html>
